@@ -7,7 +7,7 @@ async function fetchPacientes() {
     pacientesList.innerHTML = ''; // Limpa a lista atual
     pacientes.forEach(paciente => {
         const li = document.createElement('li');
-        li.textContent = `Nome: ${paciente.nome} - Cpf: ${paciente.cpf} - Data de Nascimento: ${paciente.dataNascimento}`;
+        li.textContent = `ID: ${paciente.id} - Nome: ${paciente.nome} - Cpf: ${paciente.cpf} - Data de Nascimento: ${paciente.dataNascimento}`;
         pacientesList.appendChild(li);
     });
 }
@@ -39,6 +39,31 @@ document.getElementById('add-paciente-form').addEventListener('submit', async (e
 
     // Reseta o formulário após o envio
     document.getElementById('add-paciente-form').reset();
+});
+
+
+document.getElementById('getbyid-paciente-form').addEventListener('submit', async (e) => {
+    e.preventDefault(); // Previne o envio padrão do formulário
+
+    const id = document.getElementById('insert-id').value; // Captura o ID inserido
+    const response = await fetch(`/paciente/${id}`); // Requisição para obter o paciente pelo ID
+
+    const pacienteInfo = document.getElementById('paciente-info');
+    
+    if (response.ok) { // Verifica se a resposta é bem-sucedida
+        const paciente = await response.json();
+        // "<h3> e "</h3>" utilizado abaixo como forma de demarcar um titulo. funciona mais ou menos como quebras de lina no java
+        // testar "<p> e </p>"
+        pacienteInfo.innerHTML = `
+            <h3>Dados do Paciente</h3>
+            Nome: ${paciente.nome}
+            CPF: ${paciente.cpf}
+            Data de Nascimento: ${paciente.dataNascimento}
+        `;
+    } else {
+        // Exibe mensagem se o paciente não for encontrado
+        pacienteInfo.innerHTML = `<p>ID informado nao existente no banco de dados !</p>`;
+    }
 });
 
 
