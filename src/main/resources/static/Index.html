@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto_Integrador</title>
+</head>
+<body>
+    <div>
+        <h2>Adicionar novo Paciente</h2>
+        <form id="add-paciente-form">
+            <label for="add-nome">Nome do Paciente:</label>
+            <input type="text" id="add-nome" required><br>
+
+            <label for="add-cpf">CPF do paciente:</label>
+            <input type="text" id="add-cpf" required><br>
+
+            <label for="add-data">Data de nascimento do paciente:</label>
+            <input type="date" id="add-datanascimento" required><br>
+            <button type="submit">Salvar Paciente</button>
+        </form>
+        <h2>Lista de Pacientes</h2>
+        <ul id="paciente_list"></ul>
+    </div>
+    <script src="/js/PacienteManager.js"></script>
+</body>
+</html>
