@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Consultas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Gerenciamento de Consultas</h1>
+
+    <!-- Exibir todas as consultas -->
+    <section>
+        <h2>Lista de Consultas</h2>
+        <ul id="consulta-list"></ul>
+    </section>
+
+    <!-- Formulário para agendar uma consulta -->
+    <section>
+        <h2>Agendar Nova Consulta</h2>
+        <form id="agendar-consulta-form">
+            <label for="medico-id">Selecione o Médico:</label>
+            <select id="medico-id" required></select>
+            
+            <label for="paciente-id">Selecione o Paciente:</label>
+            <select id="paciente-id" required></select>
+            
+            <label for="data-hora">Data e Hora:</label>
+            <input type="datetime-local" id="data-hora" required>
+            
+            <input type="submit" value="Agendar Consulta">
+        </form>
+    </section>
+
+    <!-- Formulário para editar uma consulta -->
+    <section>
+        <h2>Editar Consulta</h2>
+        <form id="editar-consulta-form">
+            <label for="consulta-id-editar">ID da Consulta:</label>
+            <input type="number" id="consulta-id-editar" required>
+
+            <label for="novo-medico-id">Novo Médico:</label>
+            <select id="novo-medico-id" required></select>
+            
+            <label for="novo-paciente-id">Novo Paciente:</label>
+            <select id="novo-paciente-id" required></select>
+            
+            <label for="nova-data-hora">Nova Data e Hora:</label>
+            <input type="datetime-local" id="nova-data-hora" required>
+            
+            <input type="submit" value="Editar Consulta">
+        </form>
+    </section>
+
+    <!-- Formulário para cancelar uma consulta -->
+    <section>
+        <h2>Cancelar Consulta</h2>
+        <form id="cancelar-consulta-form">
+            <label for="consulta-id-cancelar">ID da Consulta:</label>
+            <input type="number" id="consulta-id-cancelar" required>
+            <input type="submit" value="Cancelar Consulta">
+        </form>
+    </section>
+
+    <script src="/js/ConsultaManager.js"></script>
+
+</body>
+</html>

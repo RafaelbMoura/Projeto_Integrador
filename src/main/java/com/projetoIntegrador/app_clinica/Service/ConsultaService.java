@@ -31,7 +31,6 @@ public class ConsultaService {
         Consulta consulta = consultaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Consulta não encontrada"));
         consulta.setDataHora(consultaAtualizada.getDataHora());
-        consulta.setStatus(consultaAtualizada.getStatus());
         consulta.setMedico(consultaAtualizada.getMedico());
         consulta.setPaciente(consultaAtualizada.getPaciente());
         return consultaRepository.save(consulta);
