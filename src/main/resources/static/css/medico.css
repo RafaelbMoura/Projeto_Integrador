@@ -1,101 +1,114 @@
-/* Estilo geral da página */
+/* Estilos Globais */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f4f6f8;
+    color: #333;
     margin: 0;
+    padding: 0;
+    background-image: url('./img/Medico2.jpg');
+    /* Imagem de fundo personalizada */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Estilos do Header */
+.header {
+    background-color: transparent;
+    color: black;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.header nav a.back-link {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header nav a.back-link:hover {
+    background-color: #2980b9;
+    color: white;
+}
+
+.medico-list {
+    list-style-type: none;
     padding: 0;
 }
 
-/* Títulos principais */
-h1 {
-    text-align: center;
-    color: #4CAF50;
-    margin-top: 30px;
+.form-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
 }
 
-h2 {
-    color: #333;
-    margin-top: 20px;
-}
-
-/* Formulários */
-form {
+/* Card de Formulário */
+.form-card {
     background-color: #fff;
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 500px;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    margin: 10px;
 }
 
-/* Estilos dos campos do formulário */
-label {
+.form-card h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+    margin: 10px 0 5px;
     color: #555;
 }
 
-input[type="text"],
-input[type="number"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 8px 0 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+.form input[type="text"],
+.form input[type="number"],
+.form input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     box-sizing: border-box;
 }
 
-input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
+/* Botão */
+.btn {
+    background-color: #3498db;
+    color: #fff;
     border: none;
     padding: 10px 20px;
-    font-size: 16px;
+    border-radius: 4px;
     cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-input[type="submit"]:hover {
-    background-color: #45a049;
+.btn:hover {
+    background-color: #2980b9;
 }
 
-/* Lista de médicos */
-#medico_list {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 500px;
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-#medico_list li {
-    margin: 8px 0;
-    font-size: 16px;
-}
-
-/* Estilo de exibição de informações de médicos */
-#medico-info {
+/* Informações do Médico */
+.medico-info {
     margin-top: 20px;
     padding: 15px;
-    background-color: #fff;
-    width: 80%;
-    max-width: 500px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
     color: #333;
-}
-
-/* Adicionando um pequeno padding e borda */
-input[type="text"]:focus,
-input[type="number"]:focus {
-    border-color: #4CAF50;
-    outline: none;
 }

@@ -1,81 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Médicos</title>
     <link rel="stylesheet" href="/css/medico.css"> <!-- Importando o arquivo CSS -->
 </head>
+
 <body>
+    <header class="header">
+        <h1>Lista de Médicos</h1>
+        <nav>
+            <a href="PaginaInicial.html" class="back-link">Voltar para a Página Principal</a>
+        </nav>
+    </header>
 
-    <h1>Cadastro de Médicos</h1>
+  
+    <div class="form-container">
+        <!-- Formulário para Adicionar Novo Médico -->
+        <div class="form-card">
+            <h2>Adicionar Novo Médico</h2>
+            <form id="add-medico-form" class="form">
+                <label for="add-nome">Nome do Médico:</label>
+                <input type="text" id="add-nome" required><br>
 
-    <div class="medico-list-container">
-        <h2>Lista de Médicos</h2>
-        <ul id="medico_list"></ul>
+                <label for="add-crm">CRM:</label>
+                <input type="text" id="add-crm" required><br>
+
+                <label for="add-especialidade">Especialidade:</label>
+                <input type="text" id="add-especialidade" required><br>
+
+                <button type="submit" class="btn">Salvar Médico</button>
+            </form>
+        </div>
+
+        <!-- Formulário para Buscar Médico pelo ID -->
+        <div class="form-card">
+            <h2>Buscar Médico por ID</h2>
+            <form id="getbyid-medico-form" class="form">
+                <label for="insert-id">ID do Médico:</label>
+                <input type="number" id="insert-id" required><br>
+                <button type="submit" class="btn">Buscar Médico</button>
+            </form>
+
+            <!-- Área onde o médico será exibido após a busca -->
+            <div id="medico-info" class="medico-info"></div>
+        </div>
     </div>
 
-    <!-- Formulário de Adição de Médico -->
     <div class="form-container">
-        <h2>Adicionar Médico</h2>
-        <form id="add-medico-form">
-            <label for="add-nome">Nome:</label>
-            <input type="text" id="add-nome" required>
-            
-            <label for="add-crm">CRM:</label>
-            <input type="text" id="add-crm" required>
-            
-            <label for="add-especialidade">Especialidade:</label>
-            <input type="text" id="add-especialidade" required>
-            
-            <input type="submit" value="Adicionar Médico">
-        </form>
-    </div>
+        <!-- Formulário para Excluir Médico -->
+        <div class="form-card">
+            <h2>Excluir Médico</h2>
+            <form id="exc-medico-form" class="form">
+                <label for="medico-id">ID do Médico:</label>
+                <input type="number" id="medico-id" required><br>
+                <button type="submit" class="btn">Excluir Médico</button>
+            </form>
+        </div>
 
-    <!-- Formulário de Busca de Médico por ID -->
-    <div class="form-container">
-        <h2>Buscar Médico por ID</h2>
-        <form id="getbyid-medico-form">
-            <label for="insert-id">ID do Médico:</label>
-            <input type="number" id="insert-id" required>
-            <input type="submit" value="Buscar Médico">
-        </form>
-    </div>
+        <!-- Formulário para Atualizar Médico -->
+        <div class="form-card">
+            <h2>Atualizar Dados do Médico</h2>
+            <form id="update-medico-form" class="form">
+                <label for="update-medico-id">ID do Médico:</label>
+                <input type="number" id="update-medico-id" required><br>
 
-    <!-- Exibição de Dados do Médico -->
-    <div id="medico-info" class="info-container"></div>
+                <label for="update-medico-nome">Nome:</label>
+                <input type="text" id="update-medico-nome" required><br>
 
-    <!-- Formulário de Exclusão de Médico -->
-    <div class="form-container">
-        <h2>Excluir Médico</h2>
-        <form id="exc-medico-form">
-            <label for="medico-id">ID do Médico:</label>
-            <input type="number" id="medico-id" required>
-            <input type="submit" value="Excluir Médico">
-        </form>
-    </div>
+                <label for="update-medico-crm">CRM:</label>
+                <input type="text" id="update-medico-crm" required><br>
 
-    <!-- Formulário de Atualização de Médico -->
-    <div class="form-container">
-        <h2>Atualizar Médico</h2>
-        <form id="update-medico-form">
-            <label for="update-medico-id">ID do Médico:</label>
-            <input type="number" id="update-medico-id" required>
-            
-            <label for="update-medico-nome">Nome:</label>
-            <input type="text" id="update-medico-nome" required>
-            
-            <label for="update-medico-crm">CRM:</label>
-            <input type="text" id="update-medico-crm" required>
-            
-            <label for="update-medico-especialidade">Especialidade:</label>
-            <input type="text" id="update-medico-especialidade" required>
-            
-            <input type="submit" value="Atualizar Médico">
-        </form>
+                <label for="update-medico-especialidade">Especialidade:</label>
+                <input type="text" id="update-medico-especialidade" required><br>
+
+                <button type="submit" class="btn">Atualizar Médico</button>
+            </form>
+        </div>
     </div>
 
     <script src="/js/MedicoManager.js"></script>
 
 </body>
+
 </html>
