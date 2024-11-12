@@ -5,10 +5,15 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    background-image: url('./img/Medico2.jpg');
+    background-image: url('/img/Medico2.jpg');
     /* Imagem de fundo personalizada */
     background-size: cover;
     background-position: center;
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
 }
 
 /* Estilos do Header */
