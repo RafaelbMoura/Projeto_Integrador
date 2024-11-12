@@ -21,8 +21,8 @@ document.getElementById('add-paciente-form').addEventListener('submit', async (e
     e.preventDefault(); // Previne o envio padrão do formulário
 
     // Captura os valores dos campos do formulário
-    const nome = document.getElementById('add-nome').value;
-    const cpf = document.getElementById('add-cpf').value;
+    const pacienteNome = document.getElementById('add-nome').value;
+    const pacienteCpf = document.getElementById('add-cpf').value;
     const dataNascimento = document.getElementById('add-datanascimento').value;
 
     // Envia os dados do paciente para o servidor
@@ -31,7 +31,8 @@ document.getElementById('add-paciente-form').addEventListener('submit', async (e
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ nome, cpf, dataNascimento })
+        //ATENÇÃO AO NOME E ORDEM DOS ATRIBUTOS!!!!!!
+        body: JSON.stringify({ nome: pacienteNome, cpf: pacienteCpf, dataNascimento: dataNascimento })
     });
 
     // Atualiza a lista de pacientes
@@ -49,7 +50,7 @@ document.getElementById('getbyid-paciente-form').addEventListener('submit', asyn
     const response = await fetch(`/paciente/${id}`); // Requisição para obter o paciente pelo ID
 
     const pacienteInfo = document.getElementById('paciente-info');
-    
+
     if (response.ok) { // Verifica se a resposta é bem-sucedida
         const paciente = await response.json();
         // "<h3> e "</h3>" utilizado abaixo como forma de demarcar um titulo. funciona mais ou menos como quebras de lina no java
@@ -65,5 +66,43 @@ document.getElementById('getbyid-paciente-form').addEventListener('submit', asyn
         pacienteInfo.innerHTML = `<p>ID informado nao existente no banco de dados !</p>`;
     }
 });
+
+document.getElementById("exc-paciente-form").addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const pacienteId = document.getElementById("paciente-id").value;
+
+    await fetch(`/paciente/deletepaciente/${pacienteId}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": 'application/json',
+        },
+        body: JSON.stringify({ id: pacienteId })
+    });
+
+    fetchPacientes();
+    document.getElementById('exc-paciente-form').reset();
+});
+
+document.getElementById("update-paciente-form").addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const pacienteNome = document.getElementById('update-paciente-nome').value;
+    const pacienteDatanascimento = document.getElementById('update-paciente-data').value;
+    const pacienteCpf = document.getElementById('update-paciente-cpf').value;
+    const pacienteId = document.getElementById('update-paciente-id').value;
+   
+    await fetch(`/paciente/putpaciente/${pacienteId}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": 'application/json',
+        },
+        //ATENÇÃO AO NOME E ORDEM DOS ATRIBUTOS!!!!!!
+        body: JSON.stringify({nome: pacienteNome, cpf: pacienteCpf, dataNascimento: pacienteDatanascimento})
+    });
+    
+    fetchPacientes();
+    document.getElementById('update-paciente-form').reset();
+});
+
+
 
 
