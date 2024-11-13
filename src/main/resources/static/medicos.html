@@ -5,18 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Médicos</title>
-    <link rel="stylesheet" href="/css/medico.css"> <!-- Importando o arquivo CSS -->
+    <link rel="stylesheet" href="medico.css"> <!-- Importando o arquivo CSS -->
 </head>
 
 <body>
     <header class="header">
-        <h1>Lista de Médicos</h1>
+        <h1>Gerenciamento de Médicos</h1>
         <nav>
             <a href="PaginaInicial.html" class="back-link">Voltar para a Página Principal</a>
         </nav>
     </header>
 
-  
+    <div class="container">
+        <h2>Lista de Médicos</h2>
+        <ul id="medico_list" class="medico-list"></ul>
+    </div>
+
     <div class="form-container">
         <!-- Formulário para Adicionar Novo Médico -->
         <div class="form-card">

@@ -1,0 +1,160 @@
+/* Estilos Globais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-image: url('./img/Paciente.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Estilos do Header */
+.header {
+    background-color: #fff;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px);
+    color: rgb(0, 0, 0);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.header nav a.back-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header nav a.back-link:hover {
+    background-color: #2980b9;
+    color: white;
+}
+
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto 0 auto;
+    background-color: #f4f6f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container h2{
+    text-align: center;
+}
+
+/* Lista de Pacientes */
+.paciente-list {
+    list-style-type: none;
+    /* Remove o marcador padrão da lista */
+    padding: 0;
+    margin: 0;
+}
+
+.paciente-list li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.paciente-list li:hover {
+    background-color: #f0f0f5;
+    /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo para texto dos itens da lista */
+.paciente-list li .nome-paciente {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.paciente-list li .detalhes-paciente {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+/* Card de Formulário */
+.form-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    margin: 10px;
+}
+
+.form-card h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+.form input[type="text"],
+.form input[type="date"],
+.form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Botão */
+.btn {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Informações do Paciente */
+.paciente-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    color: #333;
+}
