@@ -5,7 +5,7 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    background-image: url('./img/Medico.jpg');
+    background-image: url('/img/Medico.jpg');
     /* Imagem de fundo personalizada */
     background-size: cover;
     background-position: center;
