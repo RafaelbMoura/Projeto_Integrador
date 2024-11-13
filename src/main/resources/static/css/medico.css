@@ -70,7 +70,7 @@ body {
     margin: 0;
 }
 
-.medico_list li {
+.medico-list li {
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 6px;
@@ -82,19 +82,19 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.medico_list li:hover {
-    background-color: #f0f0f5;
-    /* Cor de fundo ao passar o mouse */
+.medico-list li:hover {
+    background-color: #3498db;
+    color: white;
 }
 
 /* Estilo para texto dos itens da lista */
-.medico_list li .nome-paciente {
+.medico-list li .nome-medico {
     font-size: 1.1rem;
     font-weight: bold;
     color: #333;
 }
 
-.medico_list li .detalhes-paciente {
+.medico-list li .detalhes-medico {
     font-size: 0.9rem;
     color: #666;
 }
@@ -111,7 +111,7 @@ body {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(105, 18, 18, 0.1);
     padding: 20px;
     width: 300px;
     margin: 10px;
@@ -144,6 +144,16 @@ body {
 /* Botão */
 .btn {
     background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn_excluir {
+    background-color: #e00d0d;
     color: #fff;
     border: none;
     padding: 10px 20px;
