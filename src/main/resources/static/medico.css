@@ -11,6 +11,11 @@ body {
     background-position: center;
 }
 
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
 /* Estilos do Header */
 .header {
     background-color: #fff;
