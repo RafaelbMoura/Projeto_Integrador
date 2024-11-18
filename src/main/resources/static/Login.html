@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script type="module" src="Js/Login.js"></script>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Login Administrador</h1>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <button onclick="window.location.href='PaginaInicial.html'" class="btn btn-secondary">Voltar para a Página Inicial</button>
+    </div>
+
+    <script type="module">
+        import { Login } from './Js/Login.js'; // Corrigido o caminho
+
+        const correctUsername = "admin"; // Nome de usuário correto
+        const correctPassword = "clinica123"; // Senha correta
+
+        // Função para capturar o parâmetro 'redirect' da URL
+        function getRedirectPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('redirect'); // Retorna o valor de 'redirect' (medicos ou pacientes)
+        }
+
+        const destination = getRedirectPage(); // Captura o destino
+
+        if (!destination) {
+            alert("Por favor, selecione uma página de destino.");
+            window.location.href = 'pagina-inicial.html'; // Se não houver parâmetro de destino, redireciona para a página inicial
+        }
+
+        // Evento para capturar o envio do formulário de login
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault(); // Previne o comportamento padrão do formulário
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Verifica as credenciais e chama o método de autenticação
+            Login.authenticate(username, password, correctUsername, correctPassword, destination);
+        });
+    </script>
+</body>
+
+</html>

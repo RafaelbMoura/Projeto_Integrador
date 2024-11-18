@@ -1,0 +1,112 @@
+/* Estilos gerais da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradiente de fundo */
+    margin: 0;
+    padding: 0;
+    background-image: url('/img/azullogin.jpg');
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Container do formulário de login */
+.login-container {
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px; /* Limite de largura */
+    text-align: center;
+}
+
+/* Título do formulário */
+h1 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Estilos dos campos de entrada */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Foco nos campos de entrada */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #2575fc;
+    outline: none;
+}
+
+/* Botão de login */
+button {
+    background-color: #2575fc;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito hover no botão de login */
+button:hover {
+    background-color: #6a11cb;
+}
+
+/* Estilos do botão "Voltar para a Página Inicial" */
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito hover no botão "Voltar" */
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Mensagens de erro */
+.alert {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f44336; /* Vermelho */
+    color: white;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Responsividade para telas pequenas */
+@media screen and (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    input[type="text"],
+    input[type="password"],
+    button {
+        font-size: 14px;
+    }
+}
